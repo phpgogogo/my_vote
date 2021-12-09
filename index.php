@@ -1,3 +1,7 @@
+<?php
+include_once "./api/db.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,10 +32,22 @@
       <a class="nav-link text-dark" href="#">Link 2</a>
     </li>
   </ul>
+  <?php
+  if(isset($_SESSION["user"])){
+?>
+<div>
+  <a class="btn btn-sm btn-primary mx-1" href="?do=logout">會員登出</a>
+</div>
+<?php
+  }else{
+      ?>
   <div>
   <a class="btn btn-sm btn-primary mx-1" href="?do=login">會員登入</a>
   <a class="btn btn-sm btn-primary mx-1" href="?do=reg">註冊新會員</a>
 </div>
+<?php
+  }
+  ?>
 </nav>
 <!-- content -->
 <div class="container" style="height: 1500px;">
