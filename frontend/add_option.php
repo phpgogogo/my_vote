@@ -2,7 +2,7 @@
 <?php
 // get的id就是問卷題目的id
 $id=$_GET["id"];
-echo $id;
+// echo $id;
 $options=all("options",["topic_id"=>$_GET["id"]]);
 // dd($options);
 $subject=find("topics",["id"=>$id]);;
@@ -29,7 +29,7 @@ $subject=find("topics",["id"=>$id]);;
         // 把上面建立的空值選項撈過來 在這邊輸入內容後再傳到api 完成建立選項
         echo "<input type='text' name='options[]' value='{$value['opt']}'>";
         echo "<input type='hidden' name='opt_id[]' value='{$value['id']}'>";
-        dd($value['id']);
+        // dd($value['id']);
         echo "</label>";
       }
 ?>
