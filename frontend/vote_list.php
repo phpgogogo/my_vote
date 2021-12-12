@@ -2,7 +2,8 @@
 
 <?php
 $subjects=all("topics");
-echo "<ol class='list-group'>";
+if(isset($_SESSION["user"])){
+    echo "<ol class='list-group'>";
 foreach($subjects as $key=>$value){
     // echo $value["topic"];
     // echo "<br>";
@@ -15,6 +16,21 @@ foreach($subjects as $key=>$value){
     echo "</li>";
 }
 echo "</ol>";
+}else{
+    echo "<ol class='list-group'>";
+foreach($subjects as $key=>$value){
+    // echo $value["topic"];
+    // echo "<br>";
+    // echo $value["id"];
+    // echo "<br>";
+    echo "<li>";
+    echo "<span>";
+    echo $value["topic"];
+    echo "</span>";
+    echo "</li>";
+}
+echo "</ol>";
+}
 
 
 

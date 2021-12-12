@@ -9,6 +9,7 @@ if(isset($_SESSION["user"])){
 }else{
     ?>
     <p>沒登入時看到的畫面</p>
+    <a href="../index.php?do=vote_list">查看目前進行的投票</a>
     <?php
 
 }
