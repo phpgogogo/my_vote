@@ -48,10 +48,7 @@ if(!isset($_SESSION["admin"])){
 <?php
   }else{
       ?>
-  <div>
-  <a class="btn btn-sm btn-primary mx-1" href="?do=login">會員登入</a>
-  <a class="btn btn-sm btn-primary mx-1" href="?do=reg">註冊新會員</a>
-</div>
+
 <?php
   }
   ?>
