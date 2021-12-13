@@ -7,7 +7,7 @@
      5.輸入想要的選項後傳到api,用update更新前面增加空值的內容  -->
 
 <div class="container">
-    <form action="./api/add_subject.php" method="post">
+    <form action="../api/add_subject.php" method="post">
     <label>問卷主題: <input type="text" name="vote_title"></label>
     <input type="submit" value="送出">
 

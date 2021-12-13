@@ -20,7 +20,7 @@ foreach($_POST["options"] as $key=>$value){
     }
 }
 
-to("../index.php?do=vote_success");
+to("../backend/index.php?do=vote_success");
 
 
 ?>

@@ -30,7 +30,7 @@ if(!isset($_SESSION["admin"])){
 <nav class="navbar navbar-expand-sm bg-info">
   <ul class="navbar-nav mr-auto">
     <li class="nav-item">
-      <a class="nav-link text-dark" href="back_index.php">Home</a>
+      <a class="nav-link text-dark" href="?do=vote_manage.php">Home</a>
     </li>
     <li class="nav-item">
       <a class="nav-link text-dark" href="#">Link 1</a>
@@ -43,7 +43,7 @@ if(!isset($_SESSION["admin"])){
   if(isset($_SESSION["admin"])){
 ?>
 <div>
-  <a class="btn btn-sm btn-primary mx-1" href="../frontend/logout.php">會員登出</a>
+  <a class="btn btn-sm btn-primary mx-1" href="logout.php">會員登出</a>
 </div>
 <?php
   }else{
@@ -59,9 +59,9 @@ if(!isset($_SESSION["admin"])){
     if(isset($_GET["do"])){
         $do=$_GET["do"];
     }else{
-        $do="back_index";
+        $do="vote_manage";
     }
-    $web="./backend/" . $do . ".php";
+    $web=$do . ".php";
     if (file_exists($web)) {
         include $web;
     }else {

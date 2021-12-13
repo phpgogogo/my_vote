@@ -19,7 +19,7 @@ if(rows("users",$_POST)>0 and $_POST["account"]!="aaa"){
 }else if($_POST["account"]=="aaa"){
     $_SESSION["user"]=$_POST["account"];
     $_SESSION["admin"]=$_POST["account"];
-    to("../backend/back_index.php");
+    to("../backend");
 }else{
     $_SESSION["error"]="error";
     to("../frontend/login_fail.php");

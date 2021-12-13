@@ -10,7 +10,7 @@ echo "<pre>";
 print_r($a);
 echo "</pre>";
 // 讓問卷題目的id一起傳回去
-to("../index.php?do=add_option&id={$a['id']}");
+to("../backend/index.php?do=add_option&id={$a['id']}");
 
 
 
