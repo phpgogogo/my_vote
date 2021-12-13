@@ -11,7 +11,7 @@ $options=all("options",["topic_id"=>$id]);
 
 <h1><?=$subject["topic"];?></h1>
 <ol class="list-group">
-    <form action="../api/vote.php" method="post">
+    <form action="./api/vote.php" method="post">
 <?php
 foreach($options as $key => $opt){
     // label 讓整行都吃的到點擊選取選項的效果

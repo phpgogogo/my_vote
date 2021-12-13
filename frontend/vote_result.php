@@ -14,7 +14,7 @@ foreach($options as $key=>$value){
 
 ?>
 
-<a href="../index.php">回首頁</a>
+<a href="./index.php">回首頁</a>
 
 
 

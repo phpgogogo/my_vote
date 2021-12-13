@@ -1,8 +1,11 @@
 <?php
+session_start();
 
 $dsn="mysql:host=localhost;charset=utf8;dbname=vote";
 $pdo=new PDO($dsn,"root","");
-session_start();
+// $dsn="mysql:host=localhost;charset=utf8;dbname=s1100406";
+// $pdo=new PDO($dsn,"s1100406","s1100406");
+
 
 // 取得符合條件的一筆資料
 function find($table,$id){
@@ -125,7 +128,7 @@ function insert($table,$array){
     $sql="INSERT into $table(`" . implode('`,`',array_keys($array)) . "`) 
                        value('" . implode("','",$array) . "')";
 
-    // echo $sql;
+    echo $sql;
     return $pdo->exec($sql);
 
 }

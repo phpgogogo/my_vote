@@ -1,6 +1,6 @@
 <h1 class="text-center mt-3 font-weight-bold">會員註冊</h1>
 
-<form action="../api/reg.php" method="post">
+<form action="./api/reg.php" method="post">
 
         <div class="form-group text-center mt-5">
             <label for="name" class="">用戶名:
