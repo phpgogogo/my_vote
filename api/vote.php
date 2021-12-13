@@ -17,6 +17,11 @@ $opt["count"]=$opt["count"]+1;
 update("options",["count"=>$opt["count"]],["id"=>$opt_id]);
 
 // 把topic_id一起丟到問卷結果的頁面 以便有依據查詢哪個subject的投票結果
-to("../index.php?do=vote_result&id={$opt['topic_id']}");
+if(isset($_SESSION["admin"])){
+    to("../backend/index.php?do=vote_result&id={$opt['topic_id']}");
+}else{
+    to("../index.php?do=vote_result&id={$opt['topic_id']}");
+
+}
 
 ?>
