@@ -18,13 +18,11 @@ if (isset($_SESSION["user"])) {
         $count=q("SELECT sum(`count`) as '總計' FROM `options` WHERE `topic_id`='{$value['id']}'");
         // dd($count);
         echo "<span class='d-inline-block col-md-2 text-center'>";
-        echo $count[0]['總計'];
+        echo "總票數: " . $count[0]['總計'];
         echo "</span>";
-        echo "<a href='?do=vote_result&id={$value['id']}' class='col-md-2 offset-md-4 text-center'>";
-        echo "<button class='btn btn-primary'>觀看結果</button>";
-        echo "</a>";
+
         // 投票按鈕
-        echo "<a href='../index.php?do=vote&id={$value['id']}' class='col-md-2 offset-md-2 text-center'>";
+        echo "<a href='../index.php?do=vote&id={$value['id']}' class='col-md-2 text-center'>";
         echo "<button class='btn btn-success'>投票</button>";
         echo "</a>";
         // 投票結果按鈕
@@ -50,9 +48,9 @@ if (isset($_SESSION["user"])) {
         $count=q("SELECT sum(`count`) as '總計' FROM `options` WHERE `topic_id`='{$value['id']}'");
         // dd($count);
         echo "<span class='d-inline-block col-md-2 text-center'>";
-        echo $count[0]['總計'];
+        echo "總票數: " . $count[0]['總計'];
         echo "</span>";
-        echo "<a href='?do=vote_result&id={$value['id']}' class='col-md-2 offset-md-4 text-center'>";
+        echo "<a href='?do=vote_result&id={$value['id']}' class='col-md-2 offset-md-2 text-center'>";
         echo "<button class='btn btn-primary'>觀看結果</button>";
         echo "</a>";
         echo "</li>";
