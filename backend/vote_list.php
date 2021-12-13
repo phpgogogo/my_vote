@@ -2,7 +2,7 @@
 
 <?php
 $subjects = all("topics");
-if (isset($_SESSION["user"])) {
+if (isset($_SESSION["user"]) and isset($_SESSION["user"])) {
     echo "<ol class='list-group'>";
     foreach ($subjects as $key => $value) {
         // echo $value["topic"];
@@ -11,7 +11,7 @@ if (isset($_SESSION["user"])) {
         // echo "<br>";
         echo "<li class='mt-2 row align-items-center'>";
         echo "<span class='col-md-6 text-left'>";
-        echo $value["topic"];
+        echo $value["topic"] . "<a  href='../api/del_vote.php?id={$value['id']}'>刪除</a>";
         echo "</span>";
         
         // 總投票數顯示
