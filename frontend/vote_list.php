@@ -22,7 +22,7 @@ if (isset($_SESSION["user"])) {
         echo "</span>";
 
         // 投票按鈕
-        echo "<a href='../index.php?do=vote&id={$value['id']}' class='col-md-2 text-center'>";
+        echo "<a href='./index.php?do=vote&id={$value['id']}' class='col-md-2 text-center'>";
         echo "<button class='btn btn-success'>投票</button>";
         echo "</a>";
         // 投票結果按鈕
