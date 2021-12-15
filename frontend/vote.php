@@ -13,6 +13,11 @@ $options=all("options",["topic_id"=>$id]);
 <ol class="list-group">
     <form action="./api/vote.php" method="post">
 <?php
+if(isset($_SESSION["norepeat"]) and $_SESSION["norepeat"]==$id){
+    to("./index.php?do=norepeat");
+    exit();
+  }
+
 foreach($options as $key => $opt){
     // label 讓整行都吃的到點擊選取選項的效果
     echo "<label class='list-group-item list-group-item-success list-group-item-action'>";
