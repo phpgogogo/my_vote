@@ -12,10 +12,10 @@ if (isset($_SESSION["user"]) and isset($_SESSION["admin"])) {
         echo "<li class='mt-2 row align-items-center'>";
         echo "<span class='col-md-6 text-left'>";
         // 刪除按鈕
+        echo $value["topic"] . "<a class='p-2 ml-2' href='../api/del_vote.php?id={$value['id']}'><i class='fas fa-times text-danger'></i></a>";
         // 顯示不顯示開關
-        echo $value["topic"] . "<a class='p-2' href='../api/del_vote.php?id={$value['id']}'>刪除</a>";
         echo "<a href='../api/vote_status.php?id={$value['id']}'>";
-        echo ($value["status"]==1)?"<span class='bg-light p-2'>顯示</span>":"<span class='bg-dark text-white p-2'>不顯示</span>";
+        echo ($value["status"]==1)?"<span class='p-2'><i class='far fa-eye'></i></span>":"<span class='p-2'><i class='far fa-eye-slash'></i></span>";
         echo "</a>";
         echo "</span>";
         
