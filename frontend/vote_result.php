@@ -24,6 +24,7 @@ foreach($options as $key=>$value){
 
 
 <!-- 使用別人的bar chart code (陣列的KEY和KEY的順序一定要跟範本一樣才能用) -->
+<!-- 參考網址 https://canvasjs.com/php-charts/column-chart/ -->
 <?php
  
 // $dataPoints = array( 
