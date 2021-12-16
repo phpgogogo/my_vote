@@ -13,7 +13,8 @@ $options=all("options",["topic_id"=>$id]);
 <ol class="list-group">
     <form action="./api/vote.php" method="post">
 <?php
-if(isset($_SESSION["norepeat"]) and $_SESSION["norepeat"]==$id){
+// 判斷是否投過票
+if(isset($_SESSION["norepeat"]) and in_array($id,$_SESSION["norepeat"])){
     to("./index.php?do=norepeat");
     exit();
   }

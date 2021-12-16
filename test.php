@@ -1,12 +1,15 @@
 <?php
  include_once "./api/db.php";
 
- $all=all("users",["account"=>"aaa"]);
- dd($all);
- foreach($all as $key=>$value){
+ $check_vote=rows("already_vote",["already_vote_name"=>"ccc","topic_id"=>"2"]);
+ echo $check_vote;
+ echo "<br>";
 
- }
- echo "<hr>";
- echo $value["account"];
+//  $all=all("already_vote");
+//  dd($all);
+//  foreach($all as $key=>$value){
+//     dd($value);
+//  }
+
 
 ?>
