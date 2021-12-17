@@ -11,6 +11,7 @@ $barArray=[];
 foreach($options as $key=>$value){
     echo $value["opt"] . ":" . $value["count"] . "票";
     echo "<br>";
+	// 把資料按照長條圖所需要的格式丟進陣列
     array_push($barArray, array("y"=> $value["count"], "label"=> $value["opt"]));
 }
 // dd($barArray);
