@@ -33,17 +33,18 @@ include_once "./api/db.php";
     <li class="nav-item">
       <a class="nav-link text-dark" href="index.php">Home</a>
     </li>
-    <li class="nav-item">
+    <!-- <li class="nav-item">
       <a class="nav-link text-dark" href="#">Link 1</a>
     </li>
     <li class="nav-item">
       <a class="nav-link text-dark" href="#">Link 2</a>
-    </li>
+    </li> -->
   </ul>
   <?php
   if(isset($_SESSION["user"])){
 ?>
 <div>
+  <a class="btn btn-sm btn-primary mx-1" href="?do=member">會員中心</a>
   <a class="btn btn-sm btn-primary mx-1" href="?do=logout">會員登出</a>
 </div>
 <?php
@@ -57,6 +58,9 @@ include_once "./api/db.php";
   }
   ?>
 </nav>
+
+<!-- 放輪播圖就會出錯 不知道為什麼 -->
+
 <!-- content -->
 <div class="container">
     <?php

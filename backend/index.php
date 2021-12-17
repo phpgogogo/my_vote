@@ -32,12 +32,12 @@ if(!isset($_SESSION["admin"])){
     <li class="nav-item">
       <a class="nav-link text-dark" href="?do=vote_manage.php">Home</a>
     </li>
-    <li class="nav-item">
+    <!-- <li class="nav-item">
       <a class="nav-link text-dark" href="#">Link 1</a>
     </li>
     <li class="nav-item">
       <a class="nav-link text-dark" href="#">Link 2</a>
-    </li>
+    </li> -->
   </ul>
   <?php
   if(isset($_SESSION["admin"])){
