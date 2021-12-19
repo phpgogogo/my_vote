@@ -67,13 +67,13 @@ include_once "./api/db.php";
     if(isset($_GET["do"])){
         $do=$_GET["do"];
     }else{
-        $do="front_index";
+        $do="vote_list";
     }
     $web="./frontend/" . $do . ".php";
     if (file_exists($web)) {
         include $web;
     } else {
-        include "./frontend/front_index.php";
+        include "./frontend/vote_list.php";
     }
     // include "./frontend/login.php";
 
