@@ -44,7 +44,7 @@ include_once "./api/db.php";
   if(isset($_SESSION["user"])){
 ?>
 <div>
-  <a class="btn btn-sm btn-primary mx-1" href="?do=member">會員中心</a>
+  <a class="btn btn-sm btn-primary mx-1" href="?do=member_index">會員中心</a>
   <a class="btn btn-sm btn-primary mx-1" href="?do=logout">會員登出</a>
 </div>
 <?php
