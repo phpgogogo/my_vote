@@ -2,6 +2,7 @@
 <style>
     ol li:hover{
         background-color: #dadcde;
+        padding: 10px;
     }
 </style>
 
