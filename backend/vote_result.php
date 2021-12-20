@@ -1,24 +1,38 @@
-<h1>投票結果</h1>
+<h1 class="text-center my-3 font-weight-bold">投票結果</h1>
+
 
 <?php
 $all=find("topics",$_GET["id"]);
 $options=all("options",["topic_id"=>$_GET["id"]]);
 // dd($options);
 
-echo "題目:" . $all["topic"];
-echo "<br>";
+// echo "<div class='text-center font-weight-bold'>";
+// echo "題目:" . $all["topic"];
+// echo "</div>";
+
 $barArray=[];
 foreach($options as $key=>$value){
-    echo $value["opt"] . ":" . $value["count"] . "票";
-    echo "<br>";
+	echo "<div class='my-2 row align-items-center'>";
+	echo "<span class='offset-md-4 col-md-2 text-left'>";
+    echo $value["opt"] . ":";
+	echo "</span>";
+
+	echo "<span class='d-inline-block col-md-3 text-center'>";
+	echo $value["count"] . "票";
+	echo "</span>";
+	echo "</div>";
+    // echo "<br>";
 	// 把資料按照長條圖所需要的格式丟進陣列
     array_push($barArray, array("y"=> $value["count"], "label"=> $value["opt"]));
 }
 // dd($barArray);
+	echo "<div class'my-3'>";
+	echo "&nbsp";
+	echo "</div>";
+
 
 ?>
 
-<a href="./index.php">回首頁</a>
 
 <!-- 使用別人的bar chart code (陣列的KEY和KEY的順序一定要跟範本一樣才能用) -->
 <!-- 參考網址 https://canvasjs.com/php-charts/column-chart/ -->
@@ -46,7 +60,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	theme: "light2",
 	title:{
-		text: "投票結果"
+		text: "題目: <?=$all["topic"];?>"
 	},
 	axisY: {
 		title: "票數"
@@ -67,6 +81,7 @@ chart.render();
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 </html>   
+
 
 
 
