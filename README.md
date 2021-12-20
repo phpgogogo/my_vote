@@ -5,20 +5,41 @@
 
 ### 動作要求
 1. 分析需要的功能
-    * 功能一....
-    * 功能二....
+    * 使用者註冊、登入及登出的功能 frontend/reg.php , api/reg.php
+    * 使用者修改會員基本資料的功能 frontend/edit_member.php , api/edit_member.php
+    * 使用者進行投票的功能  frontend/vote.php , api/vote.php
+    * 新增投票題目的功能 backend/vote_page.php , api/add_subject.php
+    * 動態新增選項的功能 backend/add_option.php , api/add_option.php
+    * 管理員控制投票題目顯示與否的功能 backend/vote_list.php , api/vote_status.php
+    * 管理員刪除投票題目的功能 backend/vote_list.php , api/del_vote.php
 
 2. 設計資料表
-    * 資料表一(資料表名)
-        |欄位名|資料型態|主鍵|預設值|自動遞增|備註|
-        |---|---|---|---|---|---|
-        |||||||
-        |||||||
-    * 資料表二(資料表名)
-        |欄位名|資料型態|主鍵|預設值|自動遞增|備註|
-        |---|---|---|---|---|---|
-        |||||||
-        |||||||
+    * 資料表一(users)
+        |欄位名|資料型態|主鍵|預設值|自動遞增|備註|屬性|
+        |id|int(11)|主鍵|---|自動遞增|---|UNSIGNED|
+        |account|var(32)|---|---|---|---|---|
+        |password|var(32)|---|---|---|---|---|
+        |email|var(32)|---|---|---|---|---|
+        |name|var(12)|---|---|---|---|---|
+        |gender|var(2)|---|---|---|---|---|
+        |birthday|date|---|---|---|---|---|
+    * 資料表二(topics)
+        |欄位名|資料型態|主鍵|預設值|自動遞增|備註|屬性|
+        |id|int(11)|主鍵|---|自動遞增|---|UNSIGNED|
+        |topic|var(128)|---|---|---|---|---|
+        |status|tinyint(1)|---|1|---|---|UNSIGNED|
+    * 資料表三(options)
+        |欄位名|資料型態|主鍵|預設值|自動遞增|備註|屬性|
+        |id|int(11)|主鍵|---|自動遞增|---|UNSIGNED|
+        |opt|var(128)|---|---|---|---|---|
+        |topic_id|int(11)|---|---|---|---|UNSIGNED|
+        |count|int(11)|---|---|---|---|---|
+    * 資料表四(already_vote)
+        |欄位名|資料型態|主鍵|預設值|自動遞增|備註|屬性|
+        |id|int(11)|主鍵|---|自動遞增|---|UNSIGNED|
+        |already_vote_name|var(32)|---|---|---|---|---|
+        |topic_id|int(11)|---|---|---|---|UNSIGNED|
+
     
 3. 請充分運用學到的各項網頁知識來美化這個投票系統的畫面
     * html標籤的應用(語意標籤、表單、表格、分隔線、標頭..etc)
