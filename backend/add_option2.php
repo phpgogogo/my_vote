@@ -17,7 +17,7 @@ $subject = find("topics", ["id" => $id]);
     </div>
     <div>
         <label for="">新增選項</label>
-        <a href="../api/add_option.php?id=<?= $id; ?>">
+        <a href="" id="plus">
             <input class="bg-info border-info text-light rounded" type="button" value="+">
         </a>
     </div>
@@ -35,11 +35,6 @@ $subject = find("topics", ["id" => $id]);
 
 </form>
 
-<div class="">
-    <a href="" id="plus">
-        <input class="bg-info border-info text-light rounded" type="button" value="+">
-    </a>
-</div>
 
 <script>
     
@@ -50,16 +45,24 @@ $subject = find("topics", ["id" => $id]);
     plus.addEventListener("click",function(e){
         e.preventDefault();
         
+        // 每點一次 count+1 
         count += 1;
-        console.log("count: " + count);
+        // console.log("count: " + count);
 
         // console.log(text1.innerText);
+
+        // 撈出標籤裡的文字後轉數字
         text2=parseInt(text1.innerText);
         // console.log(typeof(text2));
-        text3=text2+count;
-        console.log(text3);
 
+        // 和count相加
+        text3=text2+count;
+        // console.log(text3);
+
+        // 要插入的標籤
         let strCE = document.createElement('div');
+        // 幫標籤上class
+        strCE.setAttribute("class", "mt-2");
         strCE.innerHTML = `選項<span id="q1">${text3}</span>: <input type='text' name='options[]'>`;
         document.querySelector('.main').appendChild(strCE);
     

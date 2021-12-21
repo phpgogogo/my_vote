@@ -17,6 +17,8 @@ if (isset($_SESSION["user"]) and isset($_SESSION["admin"])) {
         echo "<a href='../api/vote_status.php?id={$value['id']}'>";
         echo ($value["status"]==1)?"<span class='p-2'><i class='far fa-eye'></i></span>":"<span class='p-2'><i class='far fa-eye-slash'></i></span>";
         echo "</a>";
+        // 編輯選項
+        echo "<a class='p-2 ml-2' href='./index.php?do=edit_option&id={$value['id']}'><i class='fas fa-edit'></i></a>";
         echo "</span>";
         
         // 總投票數顯示
