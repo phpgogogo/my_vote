@@ -5,11 +5,11 @@ $id = $_GET["id"];
 // echo $id;
 $options = all("options", ["topic_id" => $_GET["id"]]);
 // dd($options);
-$subject = find("topics", ["id" => $id]);;
+$subject = find("topics", ["id" => $id]);
 // dd($subject);
 
 ?>
-<form action="../api/vote_finish.php?id=<?= $id; ?>" method="post">
+<form action="../api/add_option2.php?id=<?= $id; ?>" method="post">
     <!-- 新增選項的按鈕  傳到api後會先建立一個空值 -->
     <div>
         <label for="">題目:</label>
@@ -22,13 +22,13 @@ $subject = find("topics", ["id" => $id]);;
         </a>
     </div>
     <!--  -->
-    <?php
 
-        echo "<label class='list-group-item main'>";
 
-        echo "</label>";
-
-    ?>
+<label class='list-group-item main'>
+    <div>
+        選項<span id="text1">1</span>: <input type='text' name='options[]'>
+    </div>
+</label>
     <div>
         <input type="submit" value="送出">
     </div>
@@ -44,20 +44,23 @@ $subject = find("topics", ["id" => $id]);;
 <script>
     
     const plus=document.getElementById("plus");
+    const text1=document.getElementById("text1");
+    var count = 0;
     
     plus.addEventListener("click",function(e){
         e.preventDefault();
-        let strCE = document.createElement('div');
-        // strCE.innerHTML = "<span style='color:red;'>1234</span>";
-        strCE.innerHTML = "<?php foreach ($options as $key => $value) {
-        echo "選項" . ($key + 1) . " ";
-        // 把上面建立的空值選項撈過來 在這邊輸入內容後再傳到api 完成建立選項
-        echo "<input type='text' name='options[]' ";
-        echo "<input type='hidden' name='opt_id[]' ";
-        // dd($value['id']);
-    }
         
-        ?>";
+        count += 1;
+        console.log("count: " + count);
+
+        // console.log(text1.innerText);
+        text2=parseInt(text1.innerText);
+        // console.log(typeof(text2));
+        text3=text2+count;
+        console.log(text3);
+
+        let strCE = document.createElement('div');
+        strCE.innerHTML = `選項<span id="q1">${text3}</span>: <input type='text' name='options[]'>`;
         document.querySelector('.main').appendChild(strCE);
     
 })
