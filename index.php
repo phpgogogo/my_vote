@@ -45,15 +45,25 @@ ob_start();
     </li> -->
         </ul>
         <?php
-        if (isset($_SESSION["user"])) {
+        if (isset($_SESSION["admin"]) and isset($_SESSION["user"])) {
         ?>
+            <div class="row align-items-center">
+                <span class="mx-2">歡迎登入, <?=$_SESSION["user"];?></span>
+                <a class="btn btn-sm btn-primary mx-2" href="./backend/">前往後台</a>
+                <a class="btn btn-sm btn-primary mx-2" href="?do=member_index">會員中心</a>
+                <a class="btn btn-sm btn-primary ml-2 mr-3" href="?do=logout">會員登出</a>
+            </div>
+        <?php
+        } else if(!isset($_SESSION["admin"]) and isset($_SESSION["user"])){
+            ?>
             <div class="row align-items-center">
                 <span class="mx-2">歡迎登入, <?=$_SESSION["user"];?></span>
                 <a class="btn btn-sm btn-primary mx-2" href="?do=member_index">會員中心</a>
                 <a class="btn btn-sm btn-primary ml-2 mr-3" href="?do=logout">會員登出</a>
             </div>
-        <?php
-        } else {
+            <?php
+
+        }else{
         ?>
             <div>
                 <a class="btn btn-sm btn-primary mx-1" href="?do=login">會員登入</a>
