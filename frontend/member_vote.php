@@ -10,7 +10,7 @@ if (!isset($_SESSION["user"])) {
 
 <div class="row mt-3">
 <table class="table col-md-3 d-inline-block">
-        <tr>
+        <tr class="thead-light">
             <th class="text-center">功能</th>
         </tr>
         <tr>
