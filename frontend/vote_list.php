@@ -10,8 +10,16 @@
 $subjects = all("topics");
 if (isset($_SESSION["user"])) {
     ?>
-    <h2 class="mt-3">歡迎登入</h2>
-<h4 class="mb-3">請進行投票</h4>
+    <div class="row mt-3">
+        <div class="">
+            <h2 class="mt-3">歡迎登入</h2>
+            <h4 class="mb-3">請進行投票</h4>
+        </div>
+        <div class="mt-2 ml-3">
+            <img src="../images.jpg" width="70%" height="70%" alt="">
+        </div>
+    </div>
+    
     <?php
     echo "<ol class='list-group'>";
     foreach ($subjects as $key => $value) {

@@ -1,3 +1,5 @@
-<h1 class="mt-5">登入失敗</h1>
+<h1 style="text-align: center;margin-top:50px; color:red;">登入失敗</h1>
 
-<a href="../index.php">回首頁</a>
+<div style="text-align: center;">
+    <a href="../index.php">回首頁</a>
+</div>
