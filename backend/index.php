@@ -20,7 +20,13 @@ if(!isset($_SESSION["admin"])){
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      .footer {
+            height: 50px; /*設定footer本身高度*/
+            margin-top: 800px;
 
+        }
+    </style>
 
     
 </head>
@@ -54,7 +60,7 @@ if(!isset($_SESSION["admin"])){
   ?>
 </nav>
 <!-- content -->
-<div class="container" style="height: 1500px;">
+<div class="container wrapper mb-5">
     <?php
     if(isset($_GET["do"])){
         $do=$_GET["do"];
@@ -78,7 +84,7 @@ if(!isset($_SESSION["admin"])){
 
 <!-- footer -->
 <footer">
-    <div class="bg-primary text-center p-3">XXX版權所有</div>
+    <div class="bg-warning text-center p-3 footer">XXX版權所有</div>
 </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"

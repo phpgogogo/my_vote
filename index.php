@@ -14,16 +14,29 @@ ob_start();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        .container {
+        /* .container {
             min-height: 1000px;
-            /* position: relative; */
-        }
+        } */
+
+        
 
         /* footer{
         position: relative;
       } */
         .carousel .carousel-item {
             height: 300px;
+        }
+
+        .wrapper {
+            /* min-height: 800px; */
+
+            /*減去footer高度 可隨內容變動*/
+            /* min-height: calc(100% - 100px);  */
+}
+        .footer {
+            height: 50px; /*設定footer本身高度*/
+            margin-top: 800px;
+
         }
     </style>
 
@@ -88,35 +101,35 @@ ob_start();
                 <img src="https://picsum.photos/id/237/1200/300" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <!-- <h5>感謝狗狗的支持</h5> -->
-                    <p>感謝狗狗的支持</p>
+                    <p>感謝王小明的贊助</p>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="https://picsum.photos/id/247/1200/300" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <!-- <h5>Second slide label</h5> -->
-                    <p>感謝沙丘的支持</p>
+                    <p>感謝王小明的贊助</p>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="https://picsum.photos/id/258/1200/300" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <!-- <h5>Third slide label</h5> -->
-                    <p>感謝小鳥的支持</p>
+                    <p>感謝王小明的贊助</p>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="https://picsum.photos/id/240/1200/300" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <!-- <h5>Fourth slide label</h5> -->
-                    <p class="text-dark">感謝牆壁的支持</p>
+                    <p class="text-dark">感謝王小明的贊助</p>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="https://picsum.photos/id/241/1200/300" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <!-- <h5>Fifth slide label</h5> -->
-                    <p>感謝山的支持</p>
+                    <p>感謝王小明的贊助</p>
                 </div>
             </div>
         </div>
@@ -131,7 +144,7 @@ ob_start();
     </div>
 
     <!-- content -->
-    <div class="container">
+    <div class="container wrapper mb-5">
         <?php
         if (isset($_GET["do"])) {
             $do = $_GET["do"];
@@ -154,8 +167,8 @@ ob_start();
 
 
     <!-- footer -->
-    <footer">
-        <div class="bg-primary text-center p-3">XXX版權所有</div>
+    <footer>
+        <div class="bg-warning text-center p-3 footer">XXX版權所有</div>
         </footer>
 
         <?php

@@ -1,4 +1,4 @@
-<h1>投票清單</h1>
+<h1 class="mt-5">投票清單</h1>
 
 <?php
 $subjects = all("topics");

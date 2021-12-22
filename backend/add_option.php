@@ -1,4 +1,4 @@
-<h1>建立選項</h1>
+<h1 class="mt-5">建立選項</h1>
 <?php
 // get的id就是問卷題目的id
 $id=$_GET["id"];
