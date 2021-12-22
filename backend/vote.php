@@ -15,7 +15,7 @@ $options=all("options",["topic_id"=>$id]);
 <?php
 foreach($options as $key => $opt){
     // label 讓整行都吃的到點擊選取選項的效果
-    echo "<label class='list-group-item list-group-item-success list-group-item-action'>";
+    echo "<label class='list-group-item list-group-item-light list-group-item-action'>";
     //如果是複選 name 要用陣列  ex:name='opt{$opt['id']}'
     echo "<input type='radio' name='opt' value='{$opt['id']}'>";
     echo $opt["opt"];
