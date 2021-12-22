@@ -13,6 +13,7 @@
     * 編輯題目和選項的功能 backend/edit_option , api/vote_finish.php
     * 管理員控制投票題目顯示與否的功能 backend/vote_list.php , api/vote_status.php
     * 管理員刪除投票題目的功能 backend/vote_list.php , api/del_vote.php
+    * 管理員上傳圖片功能、圖片顯示與否功能、刪除圖片功能 backend/image.php , api/upload_img.php , api/edit_img.php
 
 2. 設計資料表
     * 資料表一(users)
@@ -40,6 +41,12 @@
         |id|int(11)|主鍵|---|自動遞增|---|UNSIGNED|
         |already_vote_name|var(32)|---|---|---|---|---|
         |topic_id|int(11)|---|---|---|---|UNSIGNED|
+    * 資料表四(ad)
+        |欄位名|資料型態|主鍵|預設值|自動遞增|備註|屬性|
+        |id|int(11)|主鍵|---|自動遞增|---|UNSIGNED|
+        |name|var(64)|---|---|---|---|---|
+        |sh|tinyint(1)|---|---|---|---|UNSIGNED|
+        |intro|var(64)|---|---|---|---|---|
 
     
 3. 請充分運用學到的各項網頁知識來美化這個投票系統的畫面
