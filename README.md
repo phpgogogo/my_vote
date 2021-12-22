@@ -5,7 +5,7 @@
 
 ### 動作要求
 1. 分析需要的功能
-    * 使用者註冊、登入及登出的功能 frontend/reg.php , api/reg.php
+    * 使用者註冊、登入及登出的功能 frontend/reg.php , api/reg.php 
     * 使用者修改會員基本資料的功能 frontend/edit_member.php , api/edit_member.php
     * 使用者進行投票的功能  frontend/vote.php , api/vote.php
     * 新增投票題目的功能 backend/vote_page.php , api/add_subject2.php
