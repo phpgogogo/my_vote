@@ -168,7 +168,7 @@ ob_start();
 
     <!-- footer -->
     <footer>
-        <div class="bg-warning text-center p-3 footer">XXX版權所有</div>
+        <div class="bg-warning text-center p-3 footer">XXX版權所有 &copy;</div>
         </footer>
 
         <?php
