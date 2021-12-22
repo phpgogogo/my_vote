@@ -49,6 +49,9 @@ if(!isset($_SESSION["admin"])){
   if(isset($_SESSION["admin"])){
 ?>
 <div>
+  <a class="btn btn-sm btn-primary mx-1" href="../index.php">回到前台</a>
+</div>
+<div>
   <a class="btn btn-sm btn-primary mx-1" href="logout.php">管理員登出</a>
 </div>
 <?php
