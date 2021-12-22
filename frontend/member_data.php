@@ -16,7 +16,7 @@ foreach ($account as $key => $value) {
 ?>
 
 <div class="row mt-3">
-<table class="table col-md-3 d-inline-block">
+<table class="table col-md-3 d-inline-block table-hover">
         <tr class="thead-light">
             <th class="text-center">功能</th>
         </tr>

@@ -24,7 +24,7 @@ if (!isset($_SESSION["user"])) {
             <a href="./index.php?do=member_vote">查詢投票紀錄</a>
         </div>
     </div> -->
-    <table class="table col-md-3 d-inline-block">
+    <table class="table col-md-3 d-inline-block table-hover">
         <tr class="thead-light">
             <th class="text-center">功能</th>
         </tr>
