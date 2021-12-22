@@ -8,8 +8,9 @@
     * 使用者註冊、登入及登出的功能 frontend/reg.php , api/reg.php
     * 使用者修改會員基本資料的功能 frontend/edit_member.php , api/edit_member.php
     * 使用者進行投票的功能  frontend/vote.php , api/vote.php
-    * 新增投票題目的功能 backend/vote_page.php , api/add_subject.php
-    * 動態新增選項的功能 backend/add_option.php , api/add_option.php
+    * 新增投票題目的功能 backend/vote_page.php , api/add_subject2.php
+    * 動態新增選項的功能 backend/add_option2.php , api/add_option2.php
+    * 編輯題目和選項的功能 backend/edit_option , api/vote_finish.php
     * 管理員控制投票題目顯示與否的功能 backend/vote_list.php , api/vote_status.php
     * 管理員刪除投票題目的功能 backend/vote_list.php , api/del_vote.php
 
