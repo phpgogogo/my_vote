@@ -11,17 +11,50 @@ if (!isset($_SESSION["user"])) {
 
 
 <div class="row mt-3">
-    <div class="col-md-3">
+    <!-- <div class="col-md-3">
         <div class="text-center p-2">
             <a href="./index.php?do=member_data">帳號資料</a>
         </div>
+        <hr class="my-0">
         <div class="text-center p-2">
             <a href="./index.php?do=edit_member">修改會員基本資料</a>
         </div>
+        <hr class="my-0">
         <div class="text-center p-2">
             <a href="./index.php?do=member_vote">查詢投票紀錄</a>
         </div>
-    </div>
+    </div> -->
+    <table class="table col-md-3 d-inline-block">
+        <tr>
+            <th class="text-center">功能</th>
+        </tr>
+        <tr>
+            <td>
+                <div class="text-center p-2">
+                    <a href="./index.php?do=member_data">帳號資料</a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="text-center p-2">
+                    <a href="./index.php?do=edit_member">修改會員基本資料</a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="text-center p-2">
+                    <a href="./index.php?do=member_vote">查詢投票紀錄</a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+
+
     <div class="col-md-6 text-center mt-5">
         <span class="font-weight-bold">請點選左邊功能鍵選擇服務</span>
     </div>
