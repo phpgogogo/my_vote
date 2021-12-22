@@ -13,6 +13,11 @@
     </tr>
     <tr>
         <td>
+            <a href="./index.php?do=image">編輯圖片投票清單圖片</a><br>
+        </td>
+    </tr>
+    <tr>
+        <td>
             <a href="../index.php">回到前台</a><br>
         </td>
     </tr>
