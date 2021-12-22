@@ -16,7 +16,7 @@ if (isset($_SESSION["user"])) {
             <h4 class="mb-3">請進行投票</h4>
         </div>
         <div class="mt-2 ml-3">
-            <img src="../images.jpg" width="70%" height="70%" alt="">
+            <img src="./images.jpg" width="70%" height="70%" alt="">
         </div>
     </div>
     
