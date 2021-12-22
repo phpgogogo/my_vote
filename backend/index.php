@@ -87,7 +87,7 @@ if(!isset($_SESSION["admin"])){
 
 <!-- footer -->
 <footer">
-    <div class="bg-warning text-center p-3 footer">XXX版權所有</div>
+    <div class="bg-warning text-center p-3 footer">XXX版權所有 &copy;</div>
 </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
