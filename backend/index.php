@@ -36,7 +36,7 @@ if(!isset($_SESSION["admin"])){
 <nav class="navbar navbar-expand-sm bg-info">
   <ul class="navbar-nav mr-auto">
     <li class="nav-item">
-      <a class="nav-link text-dark" href="?do=vote_manage.php">Home</a>
+      <a class="nav-link text-dark" href="?do=vote_manage.php"><i class="fas fa-home"></i> Home</a>
     </li>
     <!-- <li class="nav-item">
       <a class="nav-link text-dark" href="#">Link 1</a>
@@ -49,7 +49,7 @@ if(!isset($_SESSION["admin"])){
   if(isset($_SESSION["admin"])){
 ?>
 <div>
-  <a class="btn btn-sm btn-primary mx-1" href="logout.php">會員登出</a>
+  <a class="btn btn-sm btn-primary mx-1" href="logout.php">管理員登出</a>
 </div>
 <?php
   }else{

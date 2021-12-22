@@ -48,7 +48,7 @@ ob_start();
     <nav class="navbar navbar-expand-sm bg-info">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link text-dark" href="index.php">Home</a>
+                <a class="nav-link text-dark" href="index.php"><i class="fas fa-home"></i> Home</a>
             </li>
             <!-- <li class="nav-item">
       <a class="nav-link text-dark" href="#">Link 1</a>
