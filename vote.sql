@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2021-12-13 02:31:22
+-- 產生時間： 2021-12-23 11:53:44
 -- 伺服器版本： 10.4.21-MariaDB
--- PHP 版本： 7.4.25
+-- PHP 版本： 7.4.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,15 +34,28 @@ CREATE TABLE `ad` (
   `intro` varchar(64) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
+-- --------------------------------------------------------
+
 --
--- 傾印資料表的資料 `ad`
+-- 資料表結構 `already_vote`
 --
 
-INSERT INTO `ad` (`id`, `name`, `sh`, `intro`) VALUES
-(2, 'clock.jpg', 1, 'clock'),
-(3, 'melon_PNG14382.png', 1, 'melon'),
-(4, 'ipad.jpg', 1, 'com'),
-(5, 'Brandon Ingram.jpg', 1, 'ball');
+CREATE TABLE `already_vote` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `already_vote_name` varchar(32) NOT NULL,
+  `topic_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- 傾印資料表的資料 `already_vote`
+--
+
+INSERT INTO `already_vote` (`id`, `already_vote_name`, `topic_id`) VALUES
+(1, 'eee', 1),
+(2, 'eee', 4),
+(3, 'rrr', 1),
+(4, 'eee', 45),
+(5, 'eee', 56);
 
 -- --------------------------------------------------------
 
@@ -52,8 +65,8 @@ INSERT INTO `ad` (`id`, `name`, `sh`, `intro`) VALUES
 
 CREATE TABLE `options` (
   `id` int(11) UNSIGNED NOT NULL,
-  `opt` varchar(128) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `topic_id` int(11) UNSIGNED NOT NULL,
+  `opt` varchar(128) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `count` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
@@ -61,19 +74,31 @@ CREATE TABLE `options` (
 -- 傾印資料表的資料 `options`
 --
 
-INSERT INTO `options` (`id`, `opt`, `topic_id`, `count`) VALUES
-(1, '選項111', 1, 2),
-(5, '選項1', 2, 0),
-(6, '選項2', 2, 1),
-(7, '選項3', 2, 1),
-(8, '選項4', 2, 0),
-(12, '選項3666', 1, 0),
-(13, '選項4', 1, 1),
-(21, 'fffffffffffffffffff', 1, 0),
-(22, 'dddddddddddddddd', 1, 0),
-(23, '贊成', 4, 0),
-(24, '反對', 4, 2),
-(25, '無意見', 4, 0);
+INSERT INTO `options` (`id`, `topic_id`, `opt`, `count`) VALUES
+(1, 1, '選項111', 7),
+(12, 1, '選項3666', 4),
+(13, 1, '選項4', 5),
+(21, 1, 'fffffffffffffffffff', 2),
+(22, 1, 'dddddddddddddddd', 1),
+(23, 4, '贊成', 1),
+(24, 4, '反對', 9),
+(25, 4, '無意見', 1),
+(89, 45, 'q1', 1),
+(90, 45, 'q2', 2),
+(91, 45, 'q3', 0),
+(94, 49, '', 0),
+(95, 51, '', 0),
+(96, 52, 'p1', 1),
+(97, 52, 'p2', 1),
+(98, 52, 'p3', 0),
+(99, 53, 'u1', 1),
+(100, 53, 'u2', 0),
+(101, 53, 'u3', 1),
+(102, 53, 'u4', 0),
+(104, 56, 'q1', 1),
+(105, 56, 'q2', 1),
+(107, 56, 'q4', 1),
+(108, 56, 'q5', 0);
 
 -- --------------------------------------------------------
 
@@ -83,18 +108,26 @@ INSERT INTO `options` (`id`, `opt`, `topic_id`, `count`) VALUES
 
 CREATE TABLE `topics` (
   `id` int(11) UNSIGNED NOT NULL,
-  `topic` varchar(128) COLLATE utf8mb4_unicode_520_ci NOT NULL
+  `topic` varchar(128) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `status` tinyint(1) UNSIGNED NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
 -- 傾印資料表的資料 `topics`
 --
 
-INSERT INTO `topics` (`id`, `topic`) VALUES
-(1, '哈哈哈333'),
-(2, 'bbb'),
-(3, ''),
-(4, 'new');
+INSERT INTO `topics` (`id`, `topic`, `status`) VALUES
+(1, '哈哈哈333', 1),
+(4, 'new', 1),
+(45, 'qweqwe', 1),
+(47, 'dfff', 1),
+(48, 'wef', 1),
+(49, 'qqq', 1),
+(50, 'www', 1),
+(51, 'qqqww', 1),
+(52, 'weewewe', 1),
+(53, '6540', 1),
+(56, 'qqqqq', 1);
 
 -- --------------------------------------------------------
 
@@ -119,7 +152,14 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `account`, `password`, `email`, `name`, `gender`, `birthday`) VALUES
 (1, 'qwdwqd', 'wqdwqd', 'wqdwqdwqd', 'wqdqwdwqdqwd', '男', '2021-12-09'),
 (2, 'aaa', 'aaa', 'wdd', 'wdwd', '男', '2021-11-29'),
-(3, 'qqq', 'qqq', 'qq', 'qqq', 'q', '0000-00-00');
+(3, 'www', 'www', 'w', 'www', 'w', '0000-00-00'),
+(4, 'ccc', 'ccc', 'cc', 'ccc', 'c', '0000-00-00'),
+(5, 'ccc', 'ccc', 'cc', 'ccc', 'c', '0000-00-00'),
+(6, 'qqq', 'qq', 'q', 'qqq', 'q', '0000-00-00'),
+(7, 'eee', 'eee', 'wwwwwww', 'www', 'w', '2011-10-30'),
+(8, '', '', '', '', '', '0000-00-00'),
+(9, 'ddd', 'ddd', 'd', 'ddd', 'd', '2021-11-29'),
+(10, 'rrr', 'rrr', 'r', 'rrr', 'r', '2021-12-23');
 
 --
 -- 已傾印資料表的索引
@@ -129,6 +169,12 @@ INSERT INTO `users` (`id`, `account`, `password`, `email`, `name`, `gender`, `bi
 -- 資料表索引 `ad`
 --
 ALTER TABLE `ad`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `already_vote`
+--
+ALTER TABLE `already_vote`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -157,25 +203,31 @@ ALTER TABLE `users`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `ad`
 --
 ALTER TABLE `ad`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `already_vote`
+--
+ALTER TABLE `already_vote`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `options`
 --
 ALTER TABLE `options`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `topics`
 --
 ALTER TABLE `topics`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
