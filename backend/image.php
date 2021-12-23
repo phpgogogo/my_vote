@@ -1,18 +1,18 @@
 <div class="col-md-6 mt-3 mx-auto">
-<form action="../api/upload_img.php" method="post" enctype="multipart/form-data">
+    <form action="../api/upload_img.php" method="post" enctype="multipart/form-data">
 
-<div class='custom-file mx-auto d-block mb-2'>
-    <label for="upload" class='custom-file-label'>選擇檔案：</label>
-    <input class="custom-file-input" type="file" name="name" id="upload">
-</div>
-<div class="mx-auto text-center mt-2 input-group mb-2">
-    <label class='input-group-prepend input-group-text' for='intro'>說明：</label>
-    <input class='form-control' type="text" name="intro" id="intro">
-</div>
-<div class="mx-auto mb-2">
-    <input type="submit" value="上傳" class="btn btn-primary">
-</div>
-</form>
+        <div class='custom-file mx-auto d-block mb-2'>
+            <label for="upload" class='custom-file-label'>選擇檔案：</label>
+            <input class="custom-file-input" type="file" name="name" id="upload">
+        </div>
+        <div class="mx-auto text-center mt-2 input-group mb-2">
+            <label class='input-group-prepend input-group-text' for='intro'>說明：</label>
+            <input class='form-control' type="text" name="intro" id="intro">
+        </div>
+        <div class="mx-auto mb-2 text-center">
+            <input type="submit" value="上傳" class="btn btn-primary">
+        </div>
+    </form>
 </div>
 
 <table class="table">
@@ -22,7 +22,7 @@
         <th>狀態</th>
         <th>管理</th>
     </tr> -->
-    
+
     <?php
     // $rows=all('ad');
     // foreach($rows as $row){
@@ -43,7 +43,6 @@
     // echo "</td>";
     // echo "</tr>";
     // }
-    
 
 
 
@@ -51,50 +50,54 @@
 
 
 
-?>
 
-</table>
-
-<table>
-<tr class="">
-                    <td width="45%">wdwd</td>
-                    <td width="23%">替代文字</td>
-                    <td width="7%">顯示</td>
-                    <td width="7%">刪除</td>
-                    <td></td>
-                </tr>
-                <?php
-                $rows=all('ad');
-                foreach($rows as $row){
-                    // 判斷sh是否為1(是否顯示)  是的話$checked="checked"
-                    $checked=($row["sh"]==1)?"checked":"";
-                ?>
-                <tr>
-                    <form action="../api/edit_img.php" method="post">
-                        <td width="45%">
-                            <img src="../image/<?=$row["name"];?>" style="width:300px;height:30px;">
-                        </td>
-                        <td width="23%">
-                            <input type="text" name="intro[]" value="<?=$row["intro"];?>">
-                        </td>
-                        <td width="7%">
-                            <input type="radio" name="sh" value="<?=$row["id"];?>" <?=$checked;?>>
-                        </td>
-                        <td width="7%">
-                            <input type="checkbox" name="del[]" value="<?=$row["id"];?>">
-                        </td>
-                        <td>
-                        <input type="hidden" name="id[]" value="<?=$row["id"];?>">
-                        </td>
-                <?php
-                }
-                ?>
-                        <td>
-                            <input type="submit" value="dd">
-                        </td>
-
-                    </form>
-                </tr>
-
+    ?>
 
 </table>
+<form action="../api/edit_img.php" method="post">
+    <table class="table text-center">
+        <tr class="">
+            <td width="45%">圖片</td>
+            <td width="23%">info</td>
+            <td width="7%">顯示</td>
+            <td width="7%">刪除</td>
+            <td></td>
+        </tr>
+        <?php
+        $rows = all('ad');
+        foreach ($rows as $row) {
+            // 判斷sh是否為1(是否顯示)  是的話$checked="checked"
+            $checked = ($row["sh"] == 1) ? "checked" : "";
+        ?>
+            <tr class="">
+
+                <td width="45%">
+                    <img src="../image/<?= $row["name"]; ?>" style="width:300px;height:89px;">
+                </td>
+                <td width="23%">
+                    <div style="margin-top: 30px;">
+                        <input type="text" name="intro[]" value="<?= $row["intro"]; ?>">
+                    </div>
+                </td>
+                <td width="7%">
+                    <div style="margin-top: 30px;">
+                        <input type="radio" name="sh" value="<?= $row["id"]; ?>" <?= $checked; ?>>
+                    </div>
+                </td>
+                <td width="7%">
+                    <div style="margin-top: 30px;">
+                        <input type="checkbox" name="del[]" value="<?= $row["id"]; ?>">
+                    </div>
+                </td>
+                <td>
+                    <input type="hidden" name="id[]" value="<?= $row["id"]; ?>">
+                </td>
+            <?php
+        }
+            ?>
+            </tr>
+    </table>
+    <div class="text-center">
+        <input class="btn btn-success" type="submit" value="修改">
+    </div>
+</form>
